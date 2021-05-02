@@ -1,7 +1,6 @@
-'use strict'
-
-const swc = require('..')
+import { SWCComponent } from '../'
 
 describe('@web-build/swc', () => {
-  it('needs tests')
+  const c = new SWCComponent()
+  console.log(c.getName())
 })

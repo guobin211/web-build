@@ -1,5 +1,9 @@
 {
   "name": "@web-build/swc",
+  "scripts": {
+    "build:js": "swc src/index.js --config-file .swcrc --out-dir build --source-maps",
+    "build:spack": "spack"
+  },
   "version": "0.0.0",
   "description": "rust swc build tool",
   "author": "GuoBin <michaelbguo@tencent.com>",
@@ -12,7 +16,6 @@
   "files": [
     "lib"
   ],
-  "type": "module",
   "main": "./build/index.umd.js",
   "module": "./build/index.es.js",
   "exports": {
@@ -27,9 +30,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/guobin211/web-build.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
     "url": "https://github.com/guobin211/web-build/issues"
