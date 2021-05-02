@@ -1,0 +1,40 @@
+{
+  "name": "@web-build/typescript",
+  "version": "0.0.0",
+  "description": "typescript lang",
+  "author": "GuoBin <michaelbguo@tencent.com>",
+  "homepage": "https://github.com/guobin211/web-build#readme",
+  "license": "ISC",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "type": "module",
+  "main": "./build/index.umd.js",
+  "module": "./build/index.es.js",
+  "exports": {
+    ".": {
+      "import": "./build/index.es.js",
+      "require": "./build/index.umd.js"
+    }
+  },
+  "publishConfig": {
+    "registry": "https://www.npmjs.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guobin211/web-build.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/guobin211/web-build/issues"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}

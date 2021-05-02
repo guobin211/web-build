@@ -1,0 +1,12 @@
+node_modules
+dist
+build
+public
+static
+coverage
+.ssr
+.cache
+.log
+.debug
+debug
+*.test.js

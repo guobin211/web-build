@@ -1,0 +1,14 @@
+database
+dist
+build
+.ssr
+lib
+node_modules
+static
+local
+cache
+*.min.js
+*.lock
+*.d.ts
+*.map
+

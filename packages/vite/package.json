@@ -1,0 +1,40 @@
+{
+  "name": "@web-build/vite",
+  "version": "0.0.0",
+  "description": "vite.js tool",
+  "author": "GuoBin <michaelbguo@tencent.com>",
+  "homepage": "https://github.com/guobin211/web-build#readme",
+  "license": "ISC",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "type": "module",
+  "main": "./build/index.umd.js",
+  "module": "./build/index.es.js",
+  "exports": {
+    ".": {
+      "import": "./build/index.es.js",
+      "require": "./build/index.umd.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guobin211/web-build.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/guobin211/web-build/issues"
+  },
+  "devDependencies": {
+    "vite": "^2.2.3",
+    "@vitejs/plugin-react-refresh": "^1.3.3",
+    "@vitejs/plugin-legacy": "^1.3.2",
+    "@vitejs/create-app": "^2.2.5"
+  }
+}
