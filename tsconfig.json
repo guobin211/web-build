@@ -11,11 +11,7 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "sourceMap": true,
-    "lib": [
-      "DOM",
-      "ESNext",
-      "WebWorker"
-    ],
+    "lib": ["DOM", "ESNext", "WebWorker"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true,

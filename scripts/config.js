@@ -1,4 +1,4 @@
-import { resolve, dirname } from 'path'
+import { dirname, resolve } from 'path'
 
 const [, current] = resolve(import.meta.url).split('file:')
 

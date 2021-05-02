@@ -1,21 +1,54 @@
 {
   "root": true,
-  "env":{
+  "env": {
     "browser": true,
     "node": true,
-    "jest": true
+    "jest": true,
+    "es6": true,
+    "es2020": true
   },
-  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 2019,
+    "ecmaVersion": 2020,
     "sourceType": "module",
-    "ecmaFeatures":{
-      "jsx":true
+    "ecmaFeatures": {
+      "jsx": true
     }
   },
-  "plugins": ["@typescript-eslint"],
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"]
+  "plugins": ["jest", "promise", "import"],
+  "extends": ["eslint:recommended", "plugin:promise/recommended", "plugin:jest/recommended", "prettier"],
+  "rules": {
+    "import/first": "error",
+    "import/no-duplicates": "error",
+    "import/no-mutable-exports": "warn",
+    "import/no-webpack-loader-syntax": "warn",
+    "import/prefer-default-export": "off",
+    "line-comment-position": 2,
+    "camelcase": [
+      "error",
+      {
+        "ignoreDestructuring": true,
+        "properties": "never"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "plugins": ["jest", "promise", "import", "@typescript-eslint"],
+      "parser": "@typescript-eslint/parser",
+      "extends": [
+        "eslint:recommended",
+        "plugin:promise/recommended",
+        "plugin:jest/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+      ],
+      "parserOptions": {
+        "project": "./tsconfig.json",
+        "ecmaFeatures": {
+          "jsx": true
+        }
+      }
+    }
+  ]
 }

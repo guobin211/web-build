@@ -17,13 +17,5 @@
   "htmlWhitespaceSensitivity": "css",
   "vueIndentScriptAndStyle": false,
   "endOfLine": "lf",
-  "embeddedLanguageFormatting": "auto",
-  "overrides": [
-    {
-      "files": "*.md",
-      "options": {
-        "tabWidth": 2
-      }
-    }
-  ]
+  "embeddedLanguageFormatting": "auto"
 }

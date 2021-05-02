@@ -10,3 +10,4 @@ coverage
 .debug
 debug
 *.test.js
+.husky
