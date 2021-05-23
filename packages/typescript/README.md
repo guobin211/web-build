@@ -1,6 +1,6 @@
 # `@web-build/typescript`
 
-> Typescript语言编译器
+> Typescript 语言编译器
 
 ## Usage
 

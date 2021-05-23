@@ -1,6 +1,6 @@
 # `@web-build/babel`
 
-> babel js降级兼容处理
+> babel js 降级兼容处理
 
 ## Usage
 
