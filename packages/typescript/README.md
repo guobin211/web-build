@@ -1,11 +1,9 @@
 # `@web-build/typescript`
 
-> TODO: description
+> Typescript语言编译器
 
 ## Usage
 
 ```
-const typescript = require('@web-build/typescript');
-
-// TODO: DEMONSTRATE API
+ tsc
 ```

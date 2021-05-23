@@ -6,19 +6,18 @@
   "homepage": "https://github.com/guobin211/web-build#readme",
   "license": "ISC",
   "directories": {
-    "lib": "lib",
     "test": "__tests__"
   },
   "files": [
     "lib"
   ],
   "type": "module",
-  "main": "./build/index.umd.js",
-  "module": "./build/index.es.js",
+  "main": "./build/index.js",
+  "module": "./build/index.js",
   "exports": {
     ".": {
-      "import": "./build/index.es.js",
-      "require": "./build/index.umd.js"
+      "import": "./build/index.js",
+      "require": "./build/index.js"
     }
   },
   "publishConfig": {
@@ -29,7 +28,8 @@
     "url": "git+https://github.com/guobin211/web-build.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "build": "esbuild --bundle --format=esm --target=es6 src/index.ts --outdir=build --sourcemap",
+    "start": "esbuild --watch src/index.ts --outdir=build --sourcemap"
   },
   "bugs": {
     "url": "https://github.com/guobin211/web-build/issues"

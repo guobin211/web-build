@@ -1,11 +1,9 @@
 # `@web-build/rollup`
 
-> TODO: description
+> rollup 简单的构建工具
 
 ## Usage
 
 ```
-const rollup = require('@web-build/rollup');
-
-// TODO: DEMONSTRATE API
+rollup -c
 ```

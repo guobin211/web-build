@@ -16,11 +16,11 @@
     "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "target": "ES5",
+    "target": "ESNext",
     "module": "ESNext",
     "declaration": true,
     "outDir": "build"
   },
-  "include": ["src"],
+  "include": ["./src"],
   "exclude": ["node_modules"]
 }

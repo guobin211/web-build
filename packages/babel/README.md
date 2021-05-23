@@ -1,11 +1,9 @@
 # `@web-build/babel`
 
-> TODO: description
+> babel js降级兼容处理
 
 ## Usage
 
 ```
-const babel = require('@web-build/babel');
 
-// TODO: DEMONSTRATE API
 ```
