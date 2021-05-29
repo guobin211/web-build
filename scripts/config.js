@@ -1,8 +1,9 @@
 import { dirname, resolve, join } from 'path'
+import { fileURLToPath } from 'url'
 
-const [, current] = resolve(import.meta.url).split('file:')
+const current = dirname(fileURLToPath(import.meta.url))
 
-export const ROOT_PATH = resolve(dirname(current), '..')
+export const ROOT_PATH = resolve(current, '..')
 
 /**
  * 相对于project的路径

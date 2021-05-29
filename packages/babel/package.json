@@ -33,7 +33,7 @@
     "url": "git+https://github.com/guobin211/web-build.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "build": "babel src/index.js -o build/index.js"
   },
   "bugs": {
     "url": "https://github.com/guobin211/web-build/issues"
@@ -41,6 +41,7 @@
   "devDependencies": {
     "@babel/cli": "^7.13.16",
     "@babel/core": "^7.14.0",
+    "@babel/runtime": "^7.14.0",
     "@babel/plugin-transform-runtime": "^7.13.15"
   }
 }

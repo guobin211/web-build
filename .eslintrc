@@ -3,7 +3,6 @@
   "env": {
     "browser": true,
     "node": true,
-    "jest": true,
     "es6": true,
     "es2020": true
   },
@@ -14,8 +13,8 @@
       "jsx": true
     }
   },
-  "plugins": ["jest", "promise", "import"],
-  "extends": ["eslint:recommended", "plugin:promise/recommended", "plugin:jest/recommended", "prettier"],
+  "plugins": ["promise", "import"],
+  "extends": ["eslint:recommended", "plugin:promise/recommended", "prettier"],
   "rules": {
     "import/first": "error",
     "import/no-duplicates": "error",
@@ -34,12 +33,11 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
-      "plugins": ["jest", "promise", "import", "@typescript-eslint"],
+      "plugins": ["promise", "import", "@typescript-eslint"],
       "parser": "@typescript-eslint/parser",
       "extends": [
         "eslint:recommended",
         "plugin:promise/recommended",
-        "plugin:jest/recommended",
         "plugin:@typescript-eslint/recommended",
         "prettier"
       ],

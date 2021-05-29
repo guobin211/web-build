@@ -11,4 +11,4 @@ export class SWCComponent {
   }
 }
 
-console.log(new SWCComponent().getName())
+export default SWCComponent
