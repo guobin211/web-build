@@ -11,13 +11,32 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "sourceMap": true,
-    "lib": ["DOM", "ESNext", "WebWorker"],
+    "lib": [
+      "DOM",
+      "ESNext",
+      "WebWorker"
+    ],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "target": "ES2019",
     "module": "ESNext",
-    "allowJs": true
-  }
+    "allowJs": true,
+    "rootDir": "./",
+    "baseUrl": "./",
+    "outDir": "build"
+  },
+  "include": [
+    "packages/babel/src",
+    "packages/esbuild/src",
+    "packages/rollup/src",
+    "packages/swc/src",
+    "packages/typescript/src"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist"
+  ]
 }

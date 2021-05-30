@@ -1,8 +1,9 @@
 import { createRequire } from 'module'
-import { resolve, join } from 'path'
+import { resolve, join, dirname } from 'path'
 import { readdirSync, statSync } from 'fs'
+import { fileURLToPath } from 'url';
 
-const [, current] = resolve(import.meta.url).split('file:')
+const current = dirname(fileURLToPath(import.meta.url));
 const root = resolve(current, '../../')
 /**
  * @type {NodeRequire}

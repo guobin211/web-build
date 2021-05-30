@@ -1,7 +1,7 @@
 {
   "name": "@web-build/swc",
   "scripts": {
-    "build:js": "swc src/index.js --config-file .swcrc --out-dir build --source-maps",
+    "build:js": "swc src --config-file .swcrc.json --out-dir build --source-maps",
     "build:spack": "spack",
     "test": "jest"
   },
@@ -11,20 +11,11 @@
   "homepage": "https://github.com/guobin211/web-build#readme",
   "license": "ISC",
   "directories": {
-    "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "build"
   ],
-  "main": "./build/index.umd.js",
-  "module": "./build/index.es.js",
-  "exports": {
-    ".": {
-      "import": "./build/index.es.js",
-      "require": "./build/index.umd.js"
-    }
-  },
   "publishConfig": {
     "registry": "https://www.npmjs.com/"
   },
@@ -37,7 +28,7 @@
   },
   "devDependencies": {
     "@swc/cli": "^0.1.33",
-    "@swc/core": "^1.2.51"
-  },
-  "type": "commonjs"
+    "@swc/core": "^1.2.51",
+    "core-js": "^3.13.1"
+  }
 }

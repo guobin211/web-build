@@ -1,10 +1,13 @@
 const { config } = require('@swc/core/spack')
 
 module.exports = config({
+  mode: 'production',
   entry: {
-    'index.es': __dirname + '/src/index.js',
+    index: __dirname + '/src/index.ts',
   },
   output: {
     path: __dirname + '/build',
   },
+  module: {},
+  options: {},
 })

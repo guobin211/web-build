@@ -4,45 +4,69 @@
 
 ## Config
 
-```json5
-{
-  // env优先级比target高
-  env: {
-    targets: {
-      chrome: '90',
-    },
-    mode: 'usage',
-    coreJs: 3,
+```json
+
+  {
+  "test": ".*.tsx$",
+  "module": {
+    "type": "umd"
   },
-  jsc: {
-    parser: {
-      syntax: 'ecmascript',
-      jsx: true,
-      dynamicImport: true,
-      privateMethod: false,
-      functionBind: false,
-      exportDefaultFrom: false,
-      exportNamespaceFrom: false,
-      decorators: false,
-      decoratorsBeforeExport: false,
-      topLevelAwait: false,
-      importMeta: false,
-    },
-    transform: {
-      react: {
-        pragma: 'React.createElement',
-        pragmaFrag: 'React.Fragment',
-        throwIfNamespace: true,
-        development: false,
-        useBuiltins: false,
+  "jsc": {
+    "target": "es2016",
+    "transform": {
+      "legacyDecorator": true,
+      "decoratorMetadata": true,
+      "react": {
+        "runtime": "classic",
+        "pragma": "React.createElement",
+        "pragmaFrag": "React.Fragment",
+        "useBuiltins": true,
+        "throwIfNamespace": true,
+        "development": false
       },
+      "constModules": {
+        "globals": {
+          "@ember/env-flags": {
+            "DEBUG": "true"
+          },
+          "@ember/features": {
+            "FEATURE_A": "false",
+            "FEATURE_B": "true"
+          }
+        }
+      },
+      "optimizer": {
+        "globals": {
+          "vars": {
+            "__DEBUG__": "true"
+          }
+        }
+      }
     },
-    target: 'es5',
-    loose: false,
-    externalHelpers: false,
-    keepClassNames: false,
+    "parser": {
+      "syntax": "typescript",
+      "jsx": true,
+      "dynamicImport": false,
+      "privateMethod": false,
+      "functionBind": false,
+      "classPrivateProperty": false,
+      "exportDefaultFrom": false,
+      "exportNamespaceFrom": false,
+      "decorators": true,
+      "decoratorsBeforeExport": true,
+      "importMeta": true
+    }
   },
-  minify: false,
-  sourceMaps: true,
-}
+  "minify": false,
+  "sourceMaps": true,
+  "env": {
+    "targets": {
+      "chrome": "79",
+      "ie": "11"
+    },
+    "mode": "entry",
+    "coreJs": 3,
+    "dynamicImport": false
+  }
+},
 ```
