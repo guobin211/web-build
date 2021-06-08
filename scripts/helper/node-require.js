@@ -1,9 +1,9 @@
 import { createRequire } from 'module'
 import { resolve, join, dirname } from 'path'
 import { readdirSync, statSync } from 'fs'
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from 'url'
 
-const current = dirname(fileURLToPath(import.meta.url));
+const current = dirname(fileURLToPath(import.meta.url))
 const root = resolve(current, '../../')
 /**
  * @type {NodeRequire}
@@ -12,6 +12,7 @@ const projectRequire = createRequire(root)
 const dirs = readdirSync(root).filter((file) => statSync(file).isDirectory())
 
 /**
+ * type="module" 中代替 require
  * @param absolutePath {string}
  * @return {*}
  */

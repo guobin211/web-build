@@ -2,7 +2,7 @@ import { getRandomId } from './utils'
 
 export enum ProductTypeEnum {
   FOOD,
-  BOOKD,
+  BOOK,
 }
 
 export class Product {

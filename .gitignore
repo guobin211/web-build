@@ -55,3 +55,4 @@ local
 .tern-port
 packages/**/build
 packages/**/dist
+package-lock.json

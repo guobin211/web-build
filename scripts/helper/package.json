@@ -1,0 +1,15 @@
+{
+  "name": "helper",
+  "version": "1.0.0",
+  "scripts": {
+    "test:import": "node node-import.test"
+  },
+  "type": "commonjs",
+  "author": "GuoBin",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "imagemin": "^8.0.0"
+  },
+  "private": true
+}

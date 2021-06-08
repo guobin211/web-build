@@ -1,8 +1,7 @@
-import { Merge } from './merge';
+import { Merge } from './merge'
 
 export default class BabelArrayPolyfill {
-
-  public mergeUtil: Merge;
+  public mergeUtil: Merge
 
   constructor() {
     this.mergeUtil = new Merge()
