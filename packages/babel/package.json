@@ -32,17 +32,21 @@
     "url": "git+https://github.com/guobin211/web-build.git"
   },
   "scripts": {
-    "build": "node scripts/build.js",
-    "build:prod": "babel --config-file ./babel.prod.json --out-file dist/index.js ./src/*.ts"
+    "build": "node build.js",
+    "build:prod": "babel --config-file ./babel.prod.json --out-file ../../build/babel/mod.js ../../src/*.ts"
   },
   "bugs": {
     "url": "https://github.com/guobin211/web-build/issues"
   },
   "devDependencies": {
     "core-js": "^3.13.1",
-    "@babel/cli": "^7.13.16",
-    "@babel/core": "^7.14.0",
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
     "@babel/runtime": "^7.14.0",
-    "@babel/plugin-transform-runtime": "^7.13.15"
+    "@babel/plugin-transform-runtime": "^7.13.15",
+    "@babel/parser": "^7.14.4",
+    "@babel/generator": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-typescript": "^7.13.0"
   }
 }

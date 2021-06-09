@@ -20,10 +20,10 @@
     "url": "git+https://github.com/guobin211/web-build.git"
   },
   "scripts": {
-    "build": "tsc",
-    "build:esm": "tsc -m ESNext -t ES2018 --outDir dist",
-    "start": "tsc -w",
-    "test": "node __tests__/index.test.js"
+    "build": "npm run build:umd && npm run build:esm",
+    "build:umd": "tsc --build ./tsconfig.umd.json",
+    "build:esm": "tsc --build ./tsconfig.esm.json",
+    "start": "tsc -w ./tsconfig.esm.json"
   },
   "bugs": {
     "url": "https://github.com/guobin211/web-build/issues"

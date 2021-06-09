@@ -28,8 +28,7 @@
     "url": "git+https://github.com/guobin211/web-build.git"
   },
   "scripts": {
-    "build": "esbuild src/index.ts --bundle --format=esm --target=es6 --outdir=build --sourcemap",
-    "start": "esbuild src/index.ts --watch --outdir=build --sourcemap"
+    "build": "node build.js"
   },
   "bugs": {
     "url": "https://github.com/guobin211/web-build/issues"

@@ -23,12 +23,6 @@
     "baseUrl": "./",
     "outDir": "build"
   },
-  "include": [
-    "packages/babel/src",
-    "packages/esbuild/src",
-    "packages/rollup/src",
-    "packages/swc/src",
-    "packages/typescript/src"
-  ],
+  "include": ["src"],
   "exclude": ["node_modules", "build", "dist"]
 }

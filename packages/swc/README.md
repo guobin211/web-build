@@ -5,8 +5,7 @@
 ## Config
 
 ```json
-
-  {
+{
   "test": ".*.tsx$",
   "module": {
     "type": "umd"
@@ -68,5 +67,5 @@
     "coreJs": 3,
     "dynamicImport": false
   }
-},
+}
 ```

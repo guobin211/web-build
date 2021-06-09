@@ -9,7 +9,7 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true,
+    "resolveJsonModule": false,
     "sourceMap": true,
     "lib": ["DOM", "ESNext", "WebWorker"],
     "experimentalDecorators": true,
@@ -17,9 +17,9 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "target": "ES2018",
-    "module": "CommonJS",
+    "module": "UMD",
     "declaration": true,
-    "outDir": "../../build/typescript/cjs"
+    "outDir": "../../build/typescript/umd"
   },
   "include": ["../../src"],
   "exclude": ["node_modules"]

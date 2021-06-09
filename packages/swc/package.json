@@ -1,9 +1,9 @@
 {
   "name": "@web-build/swc",
   "scripts": {
-    "build:js": "swc src --config-file .swcrc.json --out-dir build --source-maps",
-    "build:spack": "spack",
-    "test": "jest"
+    "build": "npm run build:js && npm run build:spack",
+    "build:js": "swc ../../src --config-file .swcrc.json --out-dir ../../build/swc --source-maps",
+    "build:spack": "spack"
   },
   "version": "0.0.0",
   "description": "rust swc build tool",

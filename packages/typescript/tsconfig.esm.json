@@ -17,9 +17,9 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "target": "ES2018",
-    "module": "CommonJS",
+    "module": "ESNext",
     "declaration": true,
-    "outDir": "build"
+    "outDir": "../../build/typescript/esm"
   },
   "include": ["../../src"],
   "exclude": ["node_modules"]

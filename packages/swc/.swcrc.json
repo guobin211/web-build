@@ -10,8 +10,7 @@
     },
     "env": {
       "targets": {
-        "chrome": "79",
-        "ie": "11"
+        "chrome": "79"
       },
       "mode": "entry",
       "coreJs": 3,
@@ -37,8 +36,7 @@
     "sourceMaps": true,
     "env": {
       "targets": {
-        "chrome": "79",
-        "ie": "11"
+        "chrome": "79"
       },
       "mode": "entry",
       "coreJs": 3,
