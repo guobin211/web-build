@@ -1,7 +1,7 @@
 /**
  * type="commonjs" 中代替 import
  * @param pkg {string}
- * todo import commonjs module
+ * todo import commonjs components
  */
 async function nodeImport(pkg) {
   if (typeof require === 'function') {
@@ -12,9 +12,11 @@ async function nodeImport(pkg) {
     if (process.env.NODE_ENV !== 'production') {
       console.log(`main: ${main}, module : ${module}, exports: ${exports}`)
     }
-    let file = module
-    if (exports) {
-      exports.module ? (file = exports.module) : (file = exports)
+    let file = main
+    if (module) {
+      file = module
+    } else if (exports && exports['.'] && exports['.'].module) {
+      file = exports['.'].module
     }
     const index = path.resolve(libPath, file)
     const libModule = await import(index)

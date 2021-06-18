@@ -1,31 +1,23 @@
 import { createRequire } from 'module'
-import { resolve, join, dirname } from 'path'
-import { readdirSync, statSync } from 'fs'
+import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
 const current = dirname(fileURLToPath(import.meta.url))
-const root = resolve(current, '../../')
+
+const getCurrentRoot = () => {
+  return process.env.npm_lifecycle_event ? process.cwd() : resolve(current, '../../')
+}
+
 /**
  * @type {NodeRequire}
  */
-const projectRequire = createRequire(root)
-const dirs = readdirSync(root).filter((file) => statSync(file).isDirectory())
+const projectRequire = createRequire(getCurrentRoot())
 
 /**
- * type="module" 中代替 require
+ * type="commonjs" 中代替 require
  * @param absolutePath {string}
  * @return {*}
  */
 export function nodeRequire(absolutePath = '') {
-  if (absolutePath.startsWith(process.env.HOME)) {
-    return projectRequire(absolutePath)
-  }
-  let file = absolutePath
-  for (const dir of dirs) {
-    if (file.startsWith(dir)) {
-      return projectRequire(join(root, file))
-    }
-  }
-  file = resolve(root, absolutePath)
-  return projectRequire(file)
+  return projectRequire(absolutePath)
 }

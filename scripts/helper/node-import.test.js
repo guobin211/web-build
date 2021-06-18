@@ -1,3 +1,4 @@
+// require不需要精确到文件名
 const nodeImport = require('./node-import')
 
 console.log(nodeImport === nodeImport.nodeImport)
@@ -9,7 +10,6 @@ nodeImport('imagemin')
       destination: 'build/local',
       plugins: [],
     })
-    return
   })
   .catch((err) => {
     console.log(err)

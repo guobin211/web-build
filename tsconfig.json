@@ -17,12 +17,12 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "target": "ES2019",
-    "module": "ESNext",
+    "module": "CommonJS",
     "allowJs": true,
     "rootDir": "./",
     "baseUrl": "./",
     "outDir": "build"
   },
   "include": ["src"],
-  "exclude": ["node_modules", "build", "dist"]
+  "exclude": ["node_modules", "build", "dist", "packages", "coverage", "scripts"]
 }

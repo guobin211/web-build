@@ -16,6 +16,6 @@ cache
 *.lock
 *.d.ts
 *.map
-*.lock
 *-lock.json
 .husky
+coverage

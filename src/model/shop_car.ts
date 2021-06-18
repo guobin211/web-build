@@ -1,4 +1,4 @@
-import { getRandomId } from './utils'
+import { getRandomId } from '../utils/mod'
 
 export enum ProductTypeEnum {
   FOOD,

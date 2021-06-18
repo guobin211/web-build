@@ -11,3 +11,5 @@ coverage
 debug
 *.test.js
 .husky
+*.config.*
+coverage

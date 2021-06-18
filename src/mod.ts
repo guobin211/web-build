@@ -1,4 +1,4 @@
-import { ShopCar } from './product'
+import { ShopCar } from './model/mod'
 
 export default class ShopManage {
   public readonly shopCar = new ShopCar()
