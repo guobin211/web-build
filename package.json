@@ -1,19 +1,24 @@
 {
   "name": "web-build",
   "version": "1.0.0",
-  "scripts": {},
+  "scripts": {
+    "build-app": "node scripts/build-app.mjs",
+    "build-components": "node scripts/build-components.mjs"
+  },
   "private": true,
   "type": "module",
   "repository": "git@github.com:guobin211/web-build.git",
   "author": "GuoBin <michaelbguo@tencent.com>",
   "license": "MIT",
   "devDependencies": {
-    "@swc/cli": "^0.1.46",
-    "@swc/core": "^1.2.61",
     "@swc-node/core": "^1.5.1",
     "@swc-node/jest": "^1.3.1",
     "@swc-node/register": "^1.3.2",
+    "@swc/cli": "^0.1.46",
+    "@swc/core": "^1.2.61",
     "@types/node": "^15.12.4",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.8",
     "ts-node": "^10.0.0",
     "tslib": "^2.3.0",
     "typescript": "^4.3.1"
