@@ -20,13 +20,13 @@ function buildComponents() {
         syntax: 'typescript'
       },
       transform: {
-        react: {
+        react: Object.assign({}, {
           'pragma': 'React.createElement',
           'pragmaFrag': 'React.Fragment',
           'throwIfNamespace': true,
           'development': false,
           'useBuiltins': false
-        }
+        })
       }
     }
   }).then(output => {

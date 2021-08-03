@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "build-app": "node scripts/build-app.mjs",
-    "build-components": "node scripts/build-components.mjs"
+    "build-components": "node scripts/build-components.mjs",
+    "test": "node __tests__/async-task.test.mjs"
   },
   "private": true,
   "type": "module",
