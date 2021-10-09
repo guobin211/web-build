@@ -1,1 +1,6 @@
 declare module "*.json"
+declare module "*.json5"
+declare module "*.ejs"
+declare module "*.hbs"
+declare module "*.html"
+declare module "*.svelte"
