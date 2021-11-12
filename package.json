@@ -2,53 +2,47 @@
   "name": "web-build",
   "version": "1.0.0",
   "scripts": {
-    "boot": "lerna bootstrap",
-    "clean": "lerna clean",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
     "lint": "npm run format && npm run lint:es",
     "lint:es": "eslint . --fix --ext .ts --ext .tsx --ext .js",
     "format": "prettier --check --write .",
-    "config": "node scripts/config.js",
-    "versions": "lerna version --conventional-commits  --yes",
-    "commit": "git-cz"
+    "cat:config": "node scripts/config.mjs",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "private": true,
-  "type": "module",
   "repository": "git@github.com:guobin211/web-build.git",
   "author": "GuoBin <michaelbguo@tencent.com>",
   "license": "MIT",
   "devDependencies": {
-    "@commitlint/cli": "^12.1.4",
-    "@types/node": "^14.14.43",
-    "@types/react": "^17.0.8",
-    "@types/react-dom": "^17.0.5",
-    "@typescript-eslint/eslint-plugin": "^4.22.0",
-    "@typescript-eslint/parser": "^4.22.0",
-    "commitizen": "^4.2.4",
-    "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^7.25.0",
+    "@swc/cli": "^0.1.51",
+    "@swc/core": "^1.2.107",
+    "@swc/helpers": "^0.2.14",
+    "@swc/jest": "^0.2.5",
+    "@swc/wasm-web": "^1.2.107",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.7",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "@typescript-eslint/parser": "^5.3.1",
+    "@vitejs/plugin-react": "^1.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.2.0",
     "eslint-config-prettier": "^8.3.0",
-    "jest": "^26.6.3",
-    "ts-jest": "^27.0.3",
-    "@types/jest": "^26.0.3",
-    "lerna": "^4.0.0",
-    "prettier": "^2.2.1",
-    "typescript": "^4.2.4",
-    "core-js": "^3.13.1",
-    "ts-node": "^10.0.0"
+    "jest": "^27.3.1",
+    "prettier": "^2.4.1",
+    "typescript": "^4.3.2",
+    "vite": "^2.6.4",
+    "vite-plugin-mpa": "^1.1.1"
   },
   "dependencies": {
+    "gifuct-js": "^2.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "engines": {
-    "node": "^14.14"
-  },
-  "workspaces": [
-    "packages/*"
-  ],
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
+    "node": "^16"
   }
 }
