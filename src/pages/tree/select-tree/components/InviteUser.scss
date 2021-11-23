@@ -1,0 +1,113 @@
+.tree-select {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ccc;
+
+  div {
+    box-sizing: border-box;
+  }
+
+  .tree-select-left {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-right: 1px solid #ccc;
+
+    .tree-select-left-title {
+      height: 44px;
+
+      .search-wrap {
+        padding: 8px 16px;
+
+        .search-input {
+          height: 28px;
+          background: #ffffff;
+          border: 1px solid #c8cacc;
+          border-image: none;
+          box-shadow: none;
+          border-radius: 2px;
+          padding: 0;
+          width: 100%;
+          font-family: PingFangSC-Regular;
+          font-weight: 400;
+          font-size: 12px;
+          color: #c8cacc;
+
+          &:focus-visible {
+            border: 1px solid #c8cacc;
+            border-image: none;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+
+  .tree-select-right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    .result-title {
+      height: 44px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      color: rgba(0, 0, 0, 0.6);
+
+      .result-title-notice {
+        font-family: PingFangSC-Regular;
+        font-weight: 400;
+        font-size: 14px;
+        padding-left: 16px;
+      }
+
+      .result-title-count {
+        font-family: PingFangSC-Regular;
+        font-weight: 400;
+        font-size: 12px;
+        padding-right: 16px;
+      }
+    }
+
+    .result-footer {
+      height: 60px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .result-count {
+        line-height: 60px;
+        font-family: PingFangSC-Regular;
+        font-weight: 400;
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.6);
+        padding-left: 12px;
+      }
+
+      .result-actions {
+        line-height: 60px;
+
+        .result-btn {
+          width: 72px;
+          height: 24px;
+          background: #ffffff;
+          border: 1px solid #c8cacc;
+          border-radius: 2px;
+          cursor: pointer;
+          font-size: 12px;
+          color: #006fff;
+          margin-right: 12px;
+
+          &.confirm {
+            background: #006fff;
+            border-radius: 2px;
+            border: none;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

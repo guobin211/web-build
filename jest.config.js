@@ -3,4 +3,4 @@ module.exports = {
     '^.+\\.(t|j)sx?$': '@swc/jest',
   },
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
-}
+};

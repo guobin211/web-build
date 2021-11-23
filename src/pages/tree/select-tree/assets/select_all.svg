@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="16px"
+     height="16px" viewBox="0 0 16 16" version="1.1">
+  <title>Group 3</title>
+  <defs>
+    <rect id="path-1" x="0" y="0" width="16" height="16" rx="8"></rect>
+    <filter x="-7.8%" y="-7.8%" width="115.6%" height="115.6%" id="filter-2">
+      <feGaussianBlur stdDeviation="1" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+      <feOffset dx="0" dy="0.5" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1"
+                   result="shadowInnerInner1"></feComposite>
+      <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.4 0" type="matrix"
+                     in="shadowInnerInner1"></feColorMatrix>
+    </filter>
+    <path
+      d="M6.9,9.1 L4.8,7 C4.41340068,6.61340068 3.78659932,6.61340068 3.4,7 C3.01340068,7.38659932 3.01340068,8.01340068 3.4,8.4 L6.19289322,11.1928932 C6.58341751,11.5834175 7.21658249,11.5834175 7.60710678,11.1928932 L12.6,6.2 C12.9865993,5.81340068 12.9865993,5.18659932 12.6,4.8 C12.2134007,4.41340068 11.5865993,4.41340068 11.2,4.8 L6.9,9.1 L6.9,9.1 Z"
+      id="path-3"></path>
+    <filter x="-5.6%" y="-1.2%" width="111.1%" height="115.1%" id="filter-4">
+      <feOffset dx="0" dy="0.5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+      <feGaussianBlur stdDeviation="0.25" in="shadowOffsetOuter1"
+                      result="shadowBlurOuter1"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix"
+                     in="shadowBlurOuter1"></feColorMatrix>
+    </filter>
+  </defs>
+  <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="预定会议-邀请成员-选择成员" transform="translate(-316.000000, -367.000000)">
+      <g id="编组-35" transform="translate(300.000000, 249.000000)">
+        <g id="Group-15" transform="translate(0.000000, 66.000000)">
+          <g id="Group-12" transform="translate(0.000000, 42.000000)">
+            <g transform="translate(0.000000, 10.000000)" id="Group-11">
+              <g id="分组-7" transform="translate(16.000000, 0.000000)">
+                <g id="矩形">
+                  <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                  <use fill="black" fill-opacity="1" filter="url(#filter-2)"
+                       xlink:href="#path-1"></use>
+                  <rect stroke="#C8CACC" stroke-width="1" stroke-linejoin="square" x="0.5" y="0.5"
+                        width="15" height="15" rx="7.5"></rect>
+                </g>
+                <g id="分组-7">
+                  <rect id="Rectangle-Copy-5" fill="#006FFF" x="0" y="0" width="16" height="16"
+                        rx="8"></rect>
+                  <g id="aha">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)"
+                         xlink:href="#path-3"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

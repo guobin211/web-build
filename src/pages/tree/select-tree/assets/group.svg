@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 16 16"
+     version="1.1">
+  <title>img_group_web</title>
+  <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="预定会议-邀请成员-选择成员" transform="translate(-362.000000, -399.000000)">
+      <g id="编组-35" transform="translate(300.000000, 249.000000)">
+        <g id="Group-15" transform="translate(0.000000, 66.000000)">
+          <g id="Group-12" transform="translate(0.000000, 42.000000)">
+            <g transform="translate(0.000000, 10.000000)" id="Group-11">
+              <g id="Group-7" transform="translate(16.000000, 32.000000)">
+                <g id="img_group_web" transform="translate(46.000000, 0.000000)">
+                  <path
+                    d="M14.406,2.60799328 L8.321,2.60799328 C8.11950716,2.60989597 7.9246784,2.53035145 7.775,2.38507285 L6.623,1.22200974 C6.47381764,1.07527904 6.27799972,0.995862337 6.076,1.00016622 L1.603,1.00016622 C0.72,1.00016622 0.01,1.72708067 0.01,2.61768548 L0,13.3824807 C0,14.2730856 0.72,15 1.603,15 L14.397,15 C15.28,15 16,14.2730856 16,13.3824807 L16,4.22658945 C16,3.33490773 15.28,2.60799328 14.406,2.60799328 Z"
+                    id="Path" fill="#198CFF" fill-rule="nonzero"></path>
+                  <g id="编组" transform="translate(4.500000, 5.500000)" fill="#FFFFFF"
+                     opacity="0.5015128">
+                    <circle id="椭圆形备份" cx="3.5" cy="1.5" r="1.5"></circle>
+                    <path
+                      d="M1.5,4 L5.5,4 C6.32842712,4 7,4.67157288 7,5.5 L7,6.5 C7,6.77614237 6.77614237,7 6.5,7 L0.5,7 C0.223857625,7 3.38176876e-17,6.77614237 0,6.5 L0,5.5 C-1.01453063e-16,4.67157288 0.671572875,4 1.5,4 Z"
+                      id="矩形备份"></path>
+                  </g>
+                  <rect id="矩形" x="0" y="0" width="16" height="16"></rect>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

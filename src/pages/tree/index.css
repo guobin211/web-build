@@ -1,0 +1,13 @@
+@import '../../styles/common.css';
+
+.list-wrap {
+  height: 500px;
+  width: 300px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.custom-height {
+  height: 45px;
+  line-height: 45px;
+}

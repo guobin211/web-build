@@ -1,0 +1,76 @@
+.mc-tree-item {
+  height: 32px;
+  line-height: 32px;
+
+  &:hover {
+    background: #F1F1F1;
+  }
+
+  .mc-tree-node {
+    position: relative;
+    height: 32px;
+    line-height: 32px;
+
+    .mc-icon {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      display: block;
+      line-height: 32px;
+      background-repeat: no-repeat;
+      left: 16px;
+      top: 8px;
+
+      &.mc-icon-all {
+        background-size: 16px;
+        background-image: url('../assets/select_all.svg');
+      }
+
+      &.mc-icon-half {
+        background-size: 16px;
+        background-image: url('../assets/select_half.svg');
+      }
+
+      &.mc-icon-none {
+        background-size: 16px;
+        background-image: url('../assets/select_none.svg');
+      }
+    }
+
+    .mc-tree-node-flex {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 32px;
+      overflow: hidden;
+
+      .mc-icon {
+        position: unset;
+
+        &.mc-icon-down {
+          background-image: url('../assets/arrow_down.svg');
+        }
+
+        &.mc-icon-right {
+          background-image: url('../assets/arrow_right.svg');
+        }
+      }
+
+      .content-icon {
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-repeat: no-repeat;
+
+        &.group {
+          background-image: url('../assets/group.svg');
+        }
+      }
+
+      .mc-tree-node-content {
+        flex: 1;
+        height: 32px;
+      }
+    }
+  }
+}

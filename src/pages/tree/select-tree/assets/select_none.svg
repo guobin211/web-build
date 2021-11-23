@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="16px"
+     height="16px" viewBox="0 0 16 16" version="1.1">
+  <title>Group 3</title>
+  <defs>
+    <rect id="path-1" x="0" y="0" width="16" height="16" rx="8"></rect>
+    <filter x="-7.8%" y="-7.8%" width="115.6%" height="115.6%" id="filter-2">
+      <feGaussianBlur stdDeviation="1" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+      <feOffset dx="0" dy="0.5" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1"
+                   result="shadowInnerInner1"></feComposite>
+      <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.4 0" type="matrix"
+                     in="shadowInnerInner1"></feColorMatrix>
+    </filter>
+  </defs>
+  <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="预定会议-邀请成员-选择成员" transform="translate(-316.000000, -399.000000)">
+      <g id="编组-35" transform="translate(300.000000, 249.000000)">
+        <g id="Group-15" transform="translate(0.000000, 66.000000)">
+          <g id="Group-12" transform="translate(0.000000, 42.000000)">
+            <g transform="translate(0.000000, 10.000000)" id="Group-11">
+              <g id="矩形" transform="translate(16.000000, 32.000000)">
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)"
+                     xlink:href="#path-1"></use>
+                <rect stroke="#C8CACC" stroke-width="1" stroke-linejoin="square" x="0.5" y="0.5"
+                      width="15" height="15" rx="7.5"></rect>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
