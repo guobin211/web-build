@@ -54,6 +54,6 @@ export interface BaseTreeProps {
   // 数据
   data: TreeNode[];
   // 渲染节点的方法
-  renderNode: (node: FlattenedTreeNode) => JSX.Element | React.ReactNode;
+  renderNode: NodeRenderer;
   onChange?: OnTreeChange;
 }

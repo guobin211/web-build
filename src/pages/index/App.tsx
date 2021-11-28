@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { GifQueue } from './gif-queue';
+import Md5 from '../../components/Md5';
 
 function App() {
   useEffect(() => {
@@ -13,6 +14,7 @@ function App() {
   }, []);
   return (
     <div>
+      <Md5 />
       <canvas id="canvas" width="240" height="240" />
       <img id="img" src="/static/images/king.gif" alt="" />
     </div>

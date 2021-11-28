@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
+import React, { useMemo } from 'react';
 import Tree, { RendererProps } from 'react-virtualized-tree';
 import { FlattenedTreeNode, TreeNode } from '../api/TreeNode';
 import classNames from 'classnames';
@@ -9,7 +9,8 @@ import {
   getLastNodeIdList,
   updateNodeExpanded,
   updateSelection,
-} from '../utils/change-tree';
+} from '../utils/tree-utils';
+import Selection from './Selection';
 
 /**
  * 邀请参会成员
@@ -19,57 +20,44 @@ import {
 export default class DepartmentTree extends React.Component<SelectedTreeProps, SelectedTreeState> {
   state: SelectedTreeState;
   needTick = false;
+  selected: FlattenedTreeNode[] = [];
 
   constructor(props: SelectedTreeProps) {
     super(props);
     this.state = {
       treeData: this.props.data,
-      selected: [],
     };
   }
 
   handleSelectionChange = (node: FlattenedTreeNode) => {
     const checked = !node.state.checked;
-    let selected: FlattenedTreeNode[];
-    if (checked) {
-      selected = [...this.state.selected, ...getLastNode(node)];
-    } else {
-      const deleteIds = getLastNodeIdList(node);
-      selected = this.state.selected.filter((item) => !deleteIds.includes(item.id));
-    }
+    console.time('updateSelection');
     const treeData = updateSelection(this.state.treeData, node);
+    console.timeEnd('updateSelection');
     this.setState({
       treeData,
-      selected,
     });
+    console.time('selected');
+    if (checked) {
+      this.selected = [...this.selected, ...getLastNode(node)];
+    } else {
+      const deleteIds = getLastNodeIdList(node);
+      this.selected = this.selected.filter((item) => !deleteIds.includes(item.id));
+    }
+    console.timeEnd('selected');
     const { onSelectChange } = this.props;
-    if (onSelectChange) {
-      onSelectChange(selected);
+    if (typeof onSelectChange === 'function') {
+      onSelectChange(this.selected);
     }
   };
 
   handleExpandedChange = (node: FlattenedTreeNode) => {
+    console.time('updateNodeExpanded');
+    const treeData = updateNodeExpanded(this.state.treeData, node);
+    console.timeEnd('updateNodeExpanded');
     this.setState({
-      treeData: updateNodeExpanded(this.state.treeData, node),
+      treeData,
     });
-  };
-
-  renderSelectionIcon = (node: FlattenedTreeNode) => {
-    const {
-      state: { checked, halfChecked },
-    } = node;
-    let iconClassName = 'mc-icon-none';
-    if (checked) {
-      iconClassName = 'mc-icon-all';
-    } else if (halfChecked) {
-      iconClassName = 'mc-icon-half';
-    }
-    return (
-      <i
-        className={classNames('mc-icon', iconClassName)}
-        onClick={() => this.handleSelectionChange(node)}
-      />
-    );
   };
 
   renderExpandIcon = (node: FlattenedTreeNode) => {
@@ -106,25 +94,32 @@ export default class DepartmentTree extends React.Component<SelectedTreeProps, S
     const node: FlattenedTreeNode = rest.node as any;
     const { state } = node || {};
     if (this.needTick) {
+      console.log('needTick');
       this.tick(measure);
       this.needTick = false;
     }
-    return (
-      <div
-        className={classNames(
-          'mc-tree-node',
-          state.disabled ? 'disabled' : '',
-          this.props.className,
-        )}
-      >
-        {this.renderSelectionIcon(node)}
-        {this.renderContent(node)}
-      </div>
+    return useMemo(
+      () => (
+        <div
+          className={classNames(
+            'mc-tree-node',
+            state.disabled ? 'disabled' : '',
+            this.props.className,
+          )}
+        >
+          <Selection node={node} onClick={(d) => this.handleSelectionChange(d)} />
+          {this.renderContent(node)}
+        </div>
+      ),
+      [rest.index, rest.node],
     );
   };
 
   handleTreeChange = (nodes: any[]) => {
     console.log('handleTreeChange', nodes);
+    this.setState({
+      treeData: nodes,
+    });
   };
 
   render() {
@@ -134,7 +129,11 @@ export default class DepartmentTree extends React.Component<SelectedTreeProps, S
       <div style={{ height }}>
         <Tree nodes={treeData} onChange={this.handleTreeChange} nodeMarginLeft={0}>
           {(rest) => (
-            <div style={rest.style} className={classNames('mc-tree-item', className)}>
+            <div
+              key={rest.node.id}
+              style={rest.style}
+              className={classNames('mc-tree-item', className)}
+            >
               {this.createNodeRenderer(rest as any)}
             </div>
           )}
@@ -160,5 +159,4 @@ export interface SelectedTreeProps {
 
 interface SelectedTreeState {
   treeData: TreeNode[];
-  selected: FlattenedTreeNode[];
 }

@@ -44,7 +44,7 @@ export function flatten(tree: TreeNode, parents: string[] = []): FlattenedTreeNo
     parents,
     deepness: parents.length,
   });
-  if (tree.children) {
+  if (tree.children && tree.children.length > 0) {
     tree.children.forEach((child) => {
       res.push(...flatten(child, parents.concat(tree.id)));
     });
@@ -95,7 +95,7 @@ export function updateSelection(
         ...node,
         children: updateSelection(node.children, updateNode, deepness),
       };
-      parentNode.state = getCheckState(parentNode);
+      parentNode.state = getCheckState(parentNode, checked);
       return parentNode;
     }
     // 节点本身
@@ -128,39 +128,26 @@ export function mergeTreeState(tree: TreeNode[], selected: string[]): TreeNode[]
       };
       if (node.children && node.children.length > 0) {
         node.children = updateChildren(node.children, true);
+        node.state = getCheckState(node, true);
       }
     }
     if (node.children && node.children.length > 0) {
       node.children = mergeTreeState(node.children, selected);
-      node.state = getCheckState(node);
     }
     return node;
   });
 }
 
-function getCheckState(node: TreeNode): NodeState {
-  if (node.children && node.children.length !== 0) {
-    const status = new Set();
-    for (let i = 0; i < node.children.length; i++) {
-      const el = node.children[i];
-      if (el.state.halfChecked) {
-        node.state.checked = false;
-        node.state.halfChecked = true;
-        return node.state;
-      } else if (el.state.checked) {
-        status.add('checked');
-      } else {
-        status.add('unchecked');
-      }
-      if (status.size > 1) {
-        node.state.checked = false;
-        node.state.halfChecked = true;
-        return node.state;
-      }
-    }
-    node.state.checked = status.has('checked');
-    node.state.halfChecked = false;
-    return node.state;
+function getCheckState(node: TreeNode, checked: boolean): NodeState {
+  if (node.children && node.children.length > 0) {
+    const { checkedCount } = node.state;
+    const count = checked ? checkedCount + 1 : checkedCount - 1;
+    return {
+      ...node.state,
+      checkedCount: count,
+      checked: count === node.children.length,
+      halfChecked: count > 0 && count < node.children.length,
+    };
   }
   return node.state;
 }

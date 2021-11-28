@@ -12,6 +12,8 @@ const handleSearch: SearchFun = () => {
   });
 };
 
+const data = getMockTreeData();
+
 function App() {
   const [list, setList] = useState(new Array(500));
 
@@ -35,9 +37,7 @@ function App() {
   return (
     <div>
       <InviteUser width={640} height={500} onSearch={handleSearch} />
-      <div className="list-wrap">
-        <VirtualList ref={listRef} data={list} rowRenderer={rowRenderer} />
-      </div>
+      <div style={{ height: 500 }}>{/*<FastTree treeData={data} />*/}</div>
     </div>
   );
 }

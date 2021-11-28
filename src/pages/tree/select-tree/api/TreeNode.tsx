@@ -26,6 +26,8 @@ export interface NodeState {
   halfChecked?: boolean;
   // 禁止选择
   disabled?: boolean;
+  // 子节点选中数量
+  checkedCount: number;
 
   [key: string]: any;
 }
@@ -40,9 +42,12 @@ export interface TreeNode extends Node {
   children: TreeNode[];
 }
 
-export function getMockTreeData(path = '0', level = 2): TreeNode[] {
+const len = import.meta.env.PROD ? 10 : 10;
+const deep = import.meta.env.PROD ? 6 : 5;
+
+export function getMockTreeData(path = '0', level = deep): TreeNode[] {
   const list: TreeNode[] = [];
-  for (let i = 0; i < 2; i += 1) {
+  for (let i = 0; i < len; i += 1) {
     const key = `${path}-${i}`;
     const treeNode: TreeNode = {
       id: key,
@@ -51,6 +56,7 @@ export function getMockTreeData(path = '0', level = 2): TreeNode[] {
         expanded: true,
         checked: false,
         disabled: false,
+        checkedCount: 0,
       },
       children: [],
     };

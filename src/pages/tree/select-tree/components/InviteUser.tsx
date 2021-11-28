@@ -6,7 +6,7 @@ import InviteUserSearch, { SearchFun } from './InviteUserSearch';
 import InviteUserResultList from './InviteUserResultList';
 import { FlattenedTreeNode, getMockTreeData, TreeNode } from '../api/TreeNode';
 import DepartmentTree from './DepartmentTree';
-import { mergeTreeState } from '../utils/change-tree';
+import { mergeTreeState } from '../utils/tree-utils';
 
 export interface SelectUserProps {
   onSearch: SearchFun;
@@ -75,7 +75,6 @@ export default class InviteUser extends React.PureComponent<SelectUserProps, Sel
   };
 
   handleChange = (data: any) => {
-    console.log('handleChange', data);
     this.setState({
       result: data,
     });
