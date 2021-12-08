@@ -19,7 +19,6 @@ import Selection from './Selection';
  */
 export default class DepartmentTree extends React.Component<SelectedTreeProps, SelectedTreeState> {
   state: SelectedTreeState;
-  needTick = false;
   selected: FlattenedTreeNode[] = [];
 
   constructor(props: SelectedTreeProps) {
@@ -90,14 +89,8 @@ export default class DepartmentTree extends React.Component<SelectedTreeProps, S
   };
 
   createNodeRenderer = (rest: RendererProps<TreeNode>) => {
-    const { measure } = rest;
     const node: FlattenedTreeNode = rest.node as any;
     const { state } = node || {};
-    if (this.needTick) {
-      console.log('needTick');
-      this.tick(measure);
-      this.needTick = false;
-    }
     return useMemo(
       () => (
         <div
@@ -115,12 +108,7 @@ export default class DepartmentTree extends React.Component<SelectedTreeProps, S
     );
   };
 
-  handleTreeChange = (nodes: any[]) => {
-    console.log('handleTreeChange', nodes);
-    this.setState({
-      treeData: nodes,
-    });
-  };
+  handleTreeChange = () => {return};
 
   render() {
     const { height, className } = this.props;
@@ -141,17 +129,13 @@ export default class DepartmentTree extends React.Component<SelectedTreeProps, S
       </div>
     );
   }
-
-  tick(fn: () => void) {
-    setTimeout(fn, 16);
-  }
 }
 
 export interface SelectedTreeProps {
   height: number;
   data: TreeNode[];
+  renderItem: (node: FlattenedTreeNode) => JSX.Element | React.ReactNode;
   className?: string;
-  renderItem?: (node: FlattenedTreeNode) => JSX.Element | React.ReactNode;
   onSelectChange?: (node: FlattenedTreeNode[]) => void;
   onSelectClick?: (node: FlattenedTreeNode) => void;
   onExpandClick?: (node: FlattenedTreeNode) => void;

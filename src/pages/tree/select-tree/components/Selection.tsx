@@ -25,6 +25,7 @@ export default function Selection(props: SelectionProps) {
 
   const handleClick = () => {
     setIconClassName(iconClassName === 'mc-icon-all' ? 'mc-icon-none' : 'mc-icon-all');
+    props.onClick(props.node);
   };
 
   useEffect(() => {

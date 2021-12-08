@@ -13,10 +13,12 @@ export interface VirtualListProps {
   // 列表数据
   data: any[];
   // 行渲染
-  rowRenderer: (row: RowData) => React.ReactNode | JSX.Element;
+  rowRenderer: RowRenderer;
   // 行高
   rowHeight?: number;
 }
+
+export type RowRenderer = (row: RowData) => React.ReactNode | JSX.Element;
 
 interface VirtualListState {
   rowHeight: number;

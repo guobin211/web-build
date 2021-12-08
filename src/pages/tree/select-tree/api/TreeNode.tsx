@@ -43,7 +43,7 @@ export interface TreeNode extends Node {
 }
 
 const len = import.meta.env.PROD ? 10 : 10;
-const deep = import.meta.env.PROD ? 6 : 5;
+const deep = import.meta.env.PROD ? 5 : 4;
 
 export function getMockTreeData(path = '0', level = deep): TreeNode[] {
   const list: TreeNode[] = [];

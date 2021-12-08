@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { TreeNode } from '../api/TreeNode';
+import VirtualList, { RowRenderer } from './VirtualList';
 
 export interface ResultProps {
   data: TreeNode[];
@@ -28,17 +29,17 @@ function InviteUserResultList(props: ResultProps) {
     return height;
   }
 
+  const rowRenderer: RowRenderer = (row) => {
+    return (
+      <span>{row.data.name}</span>
+    )
+  }
+
   return (
     <div style={{ height }} className={classNames('tree-select-right')}>
       {renderTitle && <div className={classNames('result-title')}>{renderTitle(data)}</div>}
       <div className={classNames('result-list')} style={{ height: getScrollHeight() }}>
-        <ul className={classNames('result-list-scroll')}>
-          {data.map((item, index) => (
-            <li key={index} className={classNames('result-list-scroll-item')}>
-              {item.name}
-            </li>
-          ))}
-        </ul>
+        <VirtualList data={data} rowRenderer={rowRenderer} />
       </div>
       {renderFooter && <div className={classNames('result-footer')}>{renderFooter(data)}</div>}
     </div>
